@@ -59,27 +59,74 @@ void bresenham(int x1, int y1, int x2, int y2)
    }
 }
 
-/*
-show_result()
+void	show_result(int x, int y)
 {
-	if (x == 0 && y == 0)
+	string res;
+	if (x == 0)
+	{
+		if (y == 1)
+			res = "N\n";
+		else if (y == -1)
+			res = "S\n";
+	}
+	else if (x == 1)
+	{
+		if (y == 0)
+			res = "E\n";
+		else if (y == 1)
+			res = "NE\n";
+		else if (y == -1)
+			res = "SE\n";
+	}
+	else if (x == -1)
+	{
+		if (y == 0)
+			res = "W\n";
+		else if (y == 1)
+			res = "NW\n";
+		else if (y == -1)
+			res = "SW\n";
+	}
+	cout <<res;
+}
 
-	else if ()
-}*/
 int main()
 {
 	int lightX; // the X position of the light of power
 	int lightY; // the Y position of the light of power
-	int initialTX; // Thor's starting X position
-	int initialTY; // Thor's starting Y position
-	cin >> lightX >> lightY >> initialTX >> initialTY;
-	bresenham(initialTX, initialTY,lightX, lightY);
-	int r; cin >> r;
-	while(r--)
+	int x; // Thor's starting X position
+	int y; // Thor's starting Y position
+	cin >> lightX >> lightY >> x >> y;
+	int dx, dy;
+	while(1)
 	{
-		cout <<pt[1].first - pt[0].first <<" "<<pt[1].second - pt[0].second;
-		pt.erase(pt.begin());
+		int r; cin >>r;
+		dx = lightX - x;
+		dy = lightY - y;
+		if ( dy < 0 )
+		{
+			cout <<'N';
+			y--;
+		}
+		else if ( dy > 0 )
+		{
+			cout <<"S";
+			y++;
+		}
+
+		if ( dx < 0 )
+		{
+			cout <<"W";
+			x--;
+		}
+		else if ( dx > 0 )
+		{
+			cout <<"E";
+			x++;
+		}
+		cout <<'\n';
 	}
+
 	return (0);
 }
 	// Write an action using cout. DON'T FORGET THE "<< endl"
