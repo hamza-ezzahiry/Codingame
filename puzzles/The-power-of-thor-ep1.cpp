@@ -113,7 +113,6 @@ int main()
 			cout <<"S";
 			y++;
 		}
-
 		if ( dx < 0 )
 		{
 			cout <<"W";
@@ -126,7 +125,6 @@ int main()
 		}
 		cout <<'\n';
 	}
-
 	return (0);
 }
 	// Write an action using cout. DON'T FORGET THE "<< endl"
