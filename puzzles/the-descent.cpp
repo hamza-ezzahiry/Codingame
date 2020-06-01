@@ -26,7 +26,6 @@
 #define EPS 1e-7
 #define debug(var) cout << #var << ": " << var << endl;
 
-
 using namespace std;
 
 typedef    unsigned long long ull;
